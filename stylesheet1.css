@@ -19,10 +19,13 @@ html {
 }
 body.default-theme{
   justify-content:center;
-  background-color: red; /* For browsers that do not support gradients */
+  /* For browsers that do not support gradients */
+  background-color: black;
   background:
     url("./images/double-bubble-outline.png") repeat,
-    linear-gradient(50deg, darkblue, purple, orange 90%);
+    linear-gradient(50deg, black, #2d9ca2, white 90%);
+    /* #000, */
+    /* linear-gradient(50deg, darkblue, purple, orange 90%); */
   background-size:auto;
   height: 100%;
   margin: 0;
@@ -35,61 +38,72 @@ body.default-theme{
   display:flex;
   flex-direction:column;
   justify-content: center;
-  padding: 2rem;
-  margin: 5%;
+  padding: 3vw;
+  /* margin: 5vw; */
   padding-top: 1rem;
 }
 
 /* ====================
 *     Table Theme 
 *  ==================== */
-
-.default-theme table{
-  border: 1px solid #ddd;
+#links-table {
+  border: 1px solid rgba(0,0,0,0.1);
   border-collapse: separate;
   border-spacing: 0;
   border-top-left-radius:40px;
   display:table;
   height:100%;
+  grid-row:3;
+  grid-column:2;
 }
-.default-theme tr{
+#links-table tr{
   text-align:center;
   display:table-row;
 }
-.default-theme td, tr, th{
+#links-table td, tr, th{
   width:40px;
   height:40px;
 }
-.default-theme tr:nth-child(2n+1) td{
-  background-color: #fff;
+#links-table tr:nth-child(2n+1) td{
+  /* background-color: #fff; */
+  background-color:rgba(255,255,255,0.1);
 }
-.default-theme tr:nth-child(2n) td{
-  background-color: #ddd;
+#links-table tr:nth-child(2n) td{
+  /* background-color: #ddd; */
+  background-color:rgba(0,0,0,0.1);
 }
-.default-theme tr td:first-child{
+#links-table tr:nth-child(2) td:nth-child(2) {
+  border-top-left-radius: 8px;
+}
+#links-table tr td:first-child{
   font-weight: bold;
   writing-mode:sideways-lr;
   align-content:center;
   min-width: 40px;
-  background-color:rgba(255,255,255,0.1);
+  background-color:rgba(255,255,255,0);
 }
-.default-theme tr:first-child > td, th{
+#links-table tr:first-child > td, th{
   border-top-left-radius:40px;
   box-sizing:border-box;
-  background-color:rgba(255,255,255,0.1);
+  background-color:rgba(255,255,255,0);
   font-weight:bold;
 }
-
+#links-table a:hover td {
+  border:1px solid black;
+}
 /* =====================
 *      Div for text
 *  ===================== */
 
 div.text-container {
+  min-width:300px;
   display: grid;
+  grid-auto-flow: dense;
+  /* grid-auto-fit: */
   grid-template-columns: 
     1fr 3fr 1fr;
   grid-template-rows:
-    min-content 1fr 1fr min-content min-content;
+    min-content 1fr 1fr min-content min-content min-content;
   /* background-color: rgb(236, 192, 149); */
   background-color: rgba(255,255,255,0.5);
   border-radius:1rem;
@@ -116,7 +130,7 @@ ul.list-links a{
 }
 ul.list-links a:hover {
   color:black;
-  font-size:18pt;
+  font-size:150%;
 }
 
 /* ===========
@@ -131,7 +145,6 @@ div#crop_headshot {
   display:block;
   position:relative;
   overflow:hidden;
-  
   justify-self:center; 
   align-self:start;
   grid-row:2; 
@@ -162,6 +175,7 @@ img#headshot {
 
 span{
   color: red;
+  font-size:inherit;
   font-weight: bold;
 }
 
@@ -173,10 +187,56 @@ span{
   align-items: center;
   justify-content: center;
   font-style: italic;
-  font-size:20pt;
+  font-size:170%;
   grid-row:5;
   grid-column:2;
 }
 #quote :last-child{
-  font-size:16pt;
+  font-size:1rem;
 }
+/* ==================
+*      Title stuff   
+*  ==================*/
+#welcome-header {
+  grid-column:1/4;
+}
+#imp-links {
+  justify-self:start;
+  grid-row:2/span 2;
+  display:block;
+  text-align:left;
+  padding:0px;
+}
+/* ================== 
+*       The Lists 
+*  ================== */
+#songs {
+  grid-column:2;
+  grid-row: 6;
+}
+#biography {
+  margin-top:3rem;
+  grid-column:2;
+  grid-row:4;
+}
+#interests {
+  grid-column:2;
+  grid-row:7;
+}
+.random-lists {
+  justify-self:center;
+  font-weight: 700;
+  font-size: 100%;
+}
+.random-lists ul {
+  padding-left:1vw;
+}
+.random-lists li {
+  margin:.5rem;
+}
+.random-lists h3:first-child {
+  font-size: 150%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+

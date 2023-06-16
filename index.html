@@ -2,7 +2,7 @@
 
 <html lang="en">
   <head>
-    <meta charSet="UTF-8"/>
+    <meta charSet="UTF-8">
     <title>
       Gramming for the Gram
     </title>
@@ -11,33 +11,33 @@
   <body class="default-theme">
     <div>
       <div class="text-container">
-        <h1 style="grid-column:1/4;">Welcome to the dump</h1>
+        <h1 id="welcome-header">Welcome to the dump</h1>
         <!-- links to specified websites -->
-        <ul class="list-links" style="justify-self:start;grid-row:2 /span 2">
-
+      <div id="imp-links"> 
           <h3>Important Links</h3>
-          <li><a href="stylesheet1.css">Style Sheet</a> </li>
-          <li><a href="http://www.cs.gsu.edu/">CS Homepage</a></li>
-          <li><a href="https://www.chess.com/">Chess</a></li>
-          <li><a href="https://www.leetcode.com/">Leetcode</a></li>
-          <li><a href="https://www.nba.com/">NBA</a></li>
-        </ul>
-
+          <ul class="list-links" >
+            <li><a href="stylesheet1.css">Style Sheet</a> </li>
+            <li><a href="http://www.cs.gsu.edu/">CS Homepage</a></li>
+            <li><a href="https://www.chess.com/">Chess</a></li>
+            <li><a href="https://www.leetcode.com/">Leetcode</a></li>
+            <li><a href="https://www.nba.com/">NBA</a></li>
+          </ul>
+      </div>
         <!-- photo of me and my name-->
         <div id="crop_headshot"><img src="./images/headshot.jpg" alt="MISSING IMAGE" id="headshot"></div>
         <!-- Valid CSS! -->
         
-        <p>
+        <p style="align-self:start;justify-self:center;">
             <a href="http://jigsaw.w3.org/css-validator/check/referer">
-                <img style="border:0;width:88px;height:31px"
+                <img style="border:0;width:88px;height:31px;"
                     src="http://jigsaw.w3.org/css-validator/images/vcss"
-                    alt="Valid CSS!" />
+                    alt="Valid CSS!">
             </a>
         </p>
             
         <h2 id="my-name"> Jack Morris</h2>
         <!-- Assignment Table -->
-        <table style="grid-row:3;grid-column:2;" >
+        <table id="links-table" class="default-theme">
           <tbody> 
 
             <tr>
@@ -84,35 +84,57 @@
             </tr> 
           </tbody>
         </table>
-        <!-- <p style="grid-row:4; grid-column:2"> -->
-        <!-- </p> -->
-
-        <ul style="grid-row:4; grid-column:2">
-          <h1>Bio</h1>
-
-          <li><h2>Education</h2>
-            <ul>
-              <li>St.Thomas More School</li>
-              <li>Marist Highschool</li>
-              <li>A.A. Oxford College of Emory <span>University</span></li>
-              <li>B.A. Emory <span>University</span></li>
-              <li>B.S. <span>Georgia State University</span></li>
-            </ul>
-          </li>
-          <li><h2>Jobs</h2>
-            <ol>
-              <li>Mercy Care</li>
-              <li>Burger King</li>
-              <li>Amazon</li>
-            </ol>
-
-          </li>
-        </ul>
+        <div id="biography" class="random-lists">
+          <h3>Biography</h3>
+          <ul >
+            <li>Education
+              <ul>
+                <li>St.Thomas More School</li>
+                <li>Marist Highschool</li>
+                <li>A.A. Oxford College of Emory <span>University</span></li>
+                <li>B.A. Emory <span>University</span></li>
+                <li>B.S. <span>Georgia State University</span></li>
+              </ul>
+            </li>
+            <li>Jobs
+              <ol>
+                <li>Mercy Care</li>
+                <li>Burger King</li>
+                <li>Amazon</li>
+              </ol>
+            </li>
+          </ul>
+        </div>
         <div id="quote">
           <p>"People complain about the <span>bad</span> things that happen to em that they don’t deserve but they seldom mention the good. About what they done to deserve them things" </p>
           <p> -Sheriff Bell // Cormac McCarthy <br> No Country for Old Men</p>
         </div>
         <!-- A list of hobbies or interest displayed as an HTML unordered list and second list (e.g., your top-ten favorite Albums). -->
+        <div class="random-lists" id="songs">
+          <h3>Songs I've listened to recently</h3>
+          <ul>
+            <li>My Song - Labi Siffre</li>
+            <li>GO - Jordan Adetunji</li>
+            <li>Fast Car - Tracy Chapman</li>
+            <li>Rocket Man - Sir Elton John</li>
+            <li>fwb - Brakence</li>
+            <li>1:15 - 8485</li>
+            <li>Off The Grid - Kanye West</li>
+            <li>Alpha - Guapdad 4000</li>
+            <li>Herside Story - Goldlink</li>
+            <li>Trina - Smino</li>
+            <li> 4EVA - Amine // KAYTRANADA</li>
+          </ul>
+        </div>
+        <div class="random-lists" id="interests">
+          <h3>Some stuff I like </h3>
+          <ul>
+            <li>chess - more of a puzzles guy these days</li>
+            <li>leetcode - started as job prep now its a hobby</li>
+            <li>reading - been a bit of a kick lately</li>
+            <li>nba - Jokic is the one punch man of basketball -- its just a hobby</li>
+          </ul>
+        </div>
       </div>
     </div>
   </body>
