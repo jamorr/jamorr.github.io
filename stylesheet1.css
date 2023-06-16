@@ -18,7 +18,7 @@ html {
   font-family:"Helvetica", Sans-Serif;
 }
 body.default-theme{
-  justify-content:center;
+  place-content:center center;
   /* For browsers that do not support gradients */
   background-color: black;
   background:
@@ -37,11 +37,33 @@ body.default-theme{
 .default-theme div{
   display:flex;
   flex-direction:column;
-  justify-content: center;
+  place-content:center center;
+  /* justify-content: center; */
   padding: 3vw;
   /* margin: 5vw; */
   padding-top: 1rem;
 }
+/* =====================
+*      Div for text
+*  ===================== */
+
+div.text-container {
+  min-width:300px;
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template-columns: 
+    /* min(1fr, 10vw) minmax(3fr, 40vw) min(1fr, 10vw); */
+    1fr 3fr 1fr;
+  grid-template-rows:
+    min-content 1fr 1fr min-content 1fr min-content min-content;
+  place-content:center;
+  background-color: rgba(255,255,255,0.5);
+  border-radius:1rem;
+}
+.text-container h1, h2, h3 {
+  text-align: center;
+}
+
 
 /* ====================
 *     Table Theme 
@@ -65,11 +87,9 @@ body.default-theme{
   height:40px;
 }
 #links-table tr:nth-child(2n+1) td{
-  /* background-color: #fff; */
   background-color:rgba(255,255,255,0.1);
 }
 #links-table tr:nth-child(2n) td{
-  /* background-color: #ddd; */
   background-color:rgba(0,0,0,0.1);
 }
 #links-table tr:nth-child(2) td:nth-child(2) {
@@ -91,27 +111,6 @@ body.default-theme{
 #links-table a:hover td {
   border:1px solid black;
 }
-/* =====================
-*      Div for text
-*  ===================== */
-
-div.text-container {
-  min-width:300px;
-  display: grid;
-  grid-auto-flow: dense;
-  /* grid-auto-fit: */
-  grid-template-columns: 
-    1fr 3fr 1fr;
-  grid-template-rows:
-    min-content 1fr 1fr min-content min-content min-content;
-  /* background-color: rgb(236, 192, 149); */
-  background-color: rgba(255,255,255,0.5);
-  border-radius:1rem;
-}
-.text-container h1 {
-  text-align: center;
-}
-
 /* =================
 *   List of links 
 *  ================= */
@@ -119,9 +118,7 @@ div.text-container {
 ul.list-links {
   display:block;
   list-style-type:none;
-  /* margin:auto; */
   height:6rem;
-  /* overflow-y:hidden; */
 }
 ul.list-links a{
   transition: all 150ms ease-in-out;
@@ -150,7 +147,7 @@ div#crop_headshot {
   grid-row:2; 
   grid-column:2;
 
-  margin-top:0.5rem;
+  margin-top:2.5rem;
   margin-bottom:4rem;
   padding:0px;
 }
@@ -183,13 +180,15 @@ span{
 *        Quote
 *  ==================*/
 #quote {
+  max-width: minmax(50vw,600px);
   display:flex;
+  text-align:center;
   align-items: center;
   justify-content: center;
   font-style: italic;
   font-size:170%;
   grid-row:5;
-  grid-column:2;
+  grid-column-start:2;
 }
 #quote :last-child{
   font-size:1rem;
@@ -201,33 +200,11 @@ span{
   grid-column:1/4;
 }
 #imp-links {
-  justify-self:start;
-  grid-row:2/span 2;
-  display:block;
-  text-align:left;
-  padding:0px;
+  grid-row:2;
 }
 /* ================== 
 *       The Lists 
 *  ================== */
-#songs {
-  grid-column:2;
-  grid-row: 6;
-}
-#biography {
-  margin-top:3rem;
-  grid-column:2;
-  grid-row:4;
-}
-#interests {
-  grid-column:2;
-  grid-row:7;
-}
-.random-lists {
-  justify-self:center;
-  font-weight: 700;
-  font-size: 100%;
-}
 .random-lists ul {
   padding-left:1vw;
 }
@@ -239,4 +216,23 @@ span{
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+#songs {
+  grid-column:1/span 3;
+  grid-row: 6;
+}
+#biography {
+  margin-top:3rem;
+  grid-column:1/ span 3;
+  grid-row:4;
+}
+#interests {
+  grid-column:1/ span 3;
+  grid-row:7;
+}
+.random-lists {
+  justify-self:center;
+  font-weight: 700;
+  font-size: 100%;
+}
+
 
