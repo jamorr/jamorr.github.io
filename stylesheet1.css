@@ -21,7 +21,7 @@ body.default-theme{
   justify-content:center;
   background-color: red; /* For browsers that do not support gradients */
   background:
-    url("./images/double-bubble-outline(5).png") repeat,
+    url("./images/double-bubble-outline.png") repeat,
     linear-gradient(50deg, darkblue, purple, orange 90%);
   background-size:auto;
   height: 100%;
@@ -49,16 +49,9 @@ body.default-theme{
   border-collapse: separate;
   border-spacing: 0;
   border-top-left-radius:40px;
-  /* border-radius:8px; */
   display:table;
   height:100%;
 }
-/* .default-theme tr:first-child{ */
-/*   border-top-left-radius:40px; */
-/* } */
-/* .default-theme th:first-of-type{ */
-/*   border-top-left-radius:40px; */
-/* } */
 .default-theme tr{
   text-align:center;
   display:table-row;
@@ -76,23 +69,19 @@ body.default-theme{
 .default-theme tr td:first-child{
   font-weight: bold;
   writing-mode:sideways-lr;
+  align-content:center;
+  min-width: 40px;
   background-color:rgba(255,255,255,0.1);
 }
-/* .default-theme tr:first-child{ */
-/*   font-weight:bold; */
-/*   border-top-left-radius:40px; */
-  /* background-color:rgba(255,255,255,0.1); */
-/*   background-color:white; */
-/* } */
 .default-theme tr:first-child > td, th{
   border-top-left-radius:40px;
   box-sizing:border-box;
   background-color:rgba(255,255,255,0.1);
   font-weight:bold;
-  /* overflow:hidden; */
 }
+
 /* =====================
-*    Div for text
+*      Div for text
 *  ===================== */
 
 div.text-container {
@@ -100,25 +89,18 @@ div.text-container {
   grid-template-columns: 
     1fr 3fr 1fr;
   grid-template-rows:
-    min-content 1fr 1fr min-content;
-  background-color: rgb(236, 192, 149);
-  /* background-color:ivory; */
+    min-content 1fr 1fr min-content min-content;
+  /* background-color: rgb(236, 192, 149); */
+  background-color: rgba(255,255,255,0.5);
   border-radius:1rem;
 }
 .text-container h1 {
   text-align: center;
-  /* top: 0; */
-  /* left:0; */
-  /* position: absolute; */
-  /* color:transparent; */
-  /* --webkit-text-fill-color:transparent; */
-  /* --webkit-background-clip: text; */
- 
 }
 
 /* =================
 *   List of links 
-*   ================ */
+*  ================= */
 
 ul.list-links {
   display:block;
@@ -130,6 +112,7 @@ ul.list-links {
 ul.list-links a{
   transition: all 150ms ease-in-out;
   text-decoration: none;
+  transition-delay:0s;
 }
 ul.list-links a:hover {
   color:black;
@@ -177,7 +160,23 @@ img#headshot {
 *     Highlight Words
 *  ===================== */
 
-span.highlight {
+span{
   color: red;
   font-weight: bold;
+}
+
+/* ==================
+*        Quote
+*  ==================*/
+#quote {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  font-size:20pt;
+  grid-row:5;
+  grid-column:2;
+}
+#quote :last-child{
+  font-size:16pt;
 }
