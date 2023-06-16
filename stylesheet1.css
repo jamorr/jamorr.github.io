@@ -41,7 +41,6 @@ body.default-theme{
   /* justify-content: center; */
   padding: 3vw;
   /* margin: 5vw; */
-  padding-top: 1rem;
 }
 /* =====================
 *      Div for text
@@ -201,6 +200,8 @@ span{
 }
 #imp-links {
   grid-row:2;
+  padding-left:1vw;
+  padding-right:1vw;
 }
 /* ================== 
 *       The Lists 
