@@ -1,0 +1,36 @@
+body {
+  background: url("./assets/background.png");
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin:0px;
+
+}
+#banner {
+  background:url("./assets/bannerbackground.png");
+  width: 100vw;
+  height:50px;
+  display: flex;
+  justify-content:center;
+}
+
+h1 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 24pt;
+  font-family: "Verdana",Sans-serif;
+
+}
+#content-body {
+  border: 4px solid #ddd;
+  margin-right: auto;
+  margin-left: auto;
+  width:800px;
+  display: flex;
+}
+#left-col {
+  width:550px
+}
+#right-col {
+
+}
